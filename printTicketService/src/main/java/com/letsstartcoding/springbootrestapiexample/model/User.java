@@ -2,6 +2,7 @@ package com.letsstartcoding.springbootrestapiexample.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
@@ -35,8 +36,8 @@ public class User {
 	@NotBlank
 	private String email;
 	
-	@NotNull(message="Please enter the value")
-	private boolean isBroker;
+	@Column(name="is_broker")  
+	private Boolean isBroker;
 	
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -75,12 +76,12 @@ public class User {
 		this.email = email;
 	}
 
-	public boolean isBroker() {
+	public Boolean getIsBroker() {
 		return isBroker;
 	}
 
-	public void setBroker(boolean isBroker) {
-		this.isBroker = isBroker;
+	public void setIsBroker(Boolean broker) {
+		this.isBroker = broker;
 	}
 
 	public Date getCreatedAt() {
