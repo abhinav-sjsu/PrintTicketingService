@@ -43,24 +43,24 @@ public class TicketRequestDAO {
 			
 			System.out.println("Email ID is "+email);
 			
-			client = new MailjetClient(System.getenv("53beac896d319c1fb6a585a6910cc83c"), System.getenv("1f4eeb04c5852d0c74948503764b5ebb"), new ClientOptions("v3.1"));
-		    request = new MailjetRequest(Emailv31.resource)
-		    .property(Emailv31.MESSAGES, new JSONArray()
-		    .put(new JSONObject()
-		    .put(Emailv31.Message.FROM, new JSONObject()
-		    .put("Email", email)
-		    .put("Name", "Abhinav"))
-		    .put(Emailv31.Message.TO, new JSONArray()
-		    .put(new JSONObject()
-		    .put("Email", email)
-		    .put("Name", "Abhinav")))
-		    .put(Emailv31.Message.SUBJECT, "Greetings from Mailjet.")
-		    .put(Emailv31.Message.TEXTPART, "My first Mailjet email")
-		    .put(Emailv31.Message.HTMLPART, "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!")
-		    .put(Emailv31.Message.CUSTOMID, "AppGettingStartedTest")));
-		    response = client.post(request);
-		    System.out.println(response.getStatus());
-		    System.out.println(response.getData());
+//			client = new MailjetClient(System.getenv("53beac896d319c1fb6a585a6910cc83c"), System.getenv("1f4eeb04c5852d0c74948503764b5ebb"), new ClientOptions("v3.1"));
+//		    request = new MailjetRequest(Emailv31.resource)
+//		    .property(Emailv31.MESSAGES, new JSONArray()
+//		    .put(new JSONObject()
+//		    .put(Emailv31.Message.FROM, new JSONObject()
+//		    .put("Email", email)
+//		    .put("Name", "Abhinav"))
+//		    .put(Emailv31.Message.TO, new JSONArray()
+//		    .put(new JSONObject()
+//		    .put("Email", email)
+//		    .put("Name", "Abhinav")))
+//		    .put(Emailv31.Message.SUBJECT, "Greetings from Mailjet.")
+//		    .put(Emailv31.Message.TEXTPART, "My first Mailjet email")
+//		    .put(Emailv31.Message.HTMLPART, "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!")
+//		    .put(Emailv31.Message.CUSTOMID, "AppGettingStartedTest")));
+//		    response = client.post(request);
+//		    System.out.println(response.getStatus());
+//		    System.out.println(response.getData());
 		} else {
 			throw new Exception("User not Found");
 		}
