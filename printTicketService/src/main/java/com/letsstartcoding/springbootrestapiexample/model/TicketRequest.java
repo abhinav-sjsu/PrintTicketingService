@@ -37,9 +37,8 @@ public class TicketRequest {
 	@LastModifiedDate
 	private Date createdAt;
 	
-	@NotBlank
-	@Column(name="status", length=50,nullable=false)
-	private String status="Pending";
+	@Column(name="is_fulfilled")  
+	private Boolean isFulfilled;
 	
 
 	public Long getId() {
@@ -74,12 +73,12 @@ public class TicketRequest {
 		this.createdAt = createdAt;
 	}
 
-	public String getStatus() {
-		return status;
+	public Boolean getIsFulfilled() {
+		return isFulfilled;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setIsFulfilled(Boolean isFulfilled) {
+		this.isFulfilled = isFulfilled;
 	}
 	
 }
